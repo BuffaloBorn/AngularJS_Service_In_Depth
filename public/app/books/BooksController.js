@@ -4,11 +4,11 @@
         .controller('BooksController', BooksController);
 
 
-    function BooksController() {
+    function BooksController(books) {
 
         var vm = this;
 
-        vm.greeting = 'Hello from the BooksController';
+        vm.appName = books.appName;
 
     }
 
