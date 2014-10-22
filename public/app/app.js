@@ -1,22 +1,37 @@
 (function() {
 
-    angular.module('app', [])
-        .config(function($provide) {
+    var app = angular.module('app', []);
 
-            $provide.provider('books', function() {
-                this.$get = function() {
+    app.provider('books', function () {
 
-                    var appName = 'Book Logger';
-                    var appDesc = 'Track which books you read.';
+        var includeVersionInTitle = false;
+        this.setIncludeVersionInTitle = function (value) {
+            includeVersionInTitle = value;
+        };
 
-                    return {
-                        appName: appName,
-                        appDesc: appDesc
-                    };
-                }
+        this.$get = function () {
 
-            });
+            var appName = 'Book Logger';
+            var version = '1.0';
 
-        });
+            if (includeVersionInTitle) {
+                appName += ' ' + version;
+            }
+
+            var appDesc = 'Track which books you read.';
+
+            return {
+                appName: appName,
+                appDesc: appDesc
+            };
+        }
+
+    });
+
+    app.config(function (booksProvider) {
+
+        booksProvider.setIncludeVersionInTitle(true);
+
+    });
 
 }());
