@@ -1,17 +1,23 @@
 (function() {
 
     angular.module('app')
-        .service('logger', Logger);
+        .service('logger', BookAppLogger);
 
+    function LoggerBase() { }
 
-    function Logger() {
+    LoggerBase.prototype.output = function(message) {
+        console.log('LoggerBase: ' + message);
+    };
 
-        this.name = 'trace logger';
+    function BookAppLogger() {
 
+        LoggerBase.call(this);
+
+        this.logBook = function(book) {
+            console.log('Book: ' + book.title);
+        }
     }
 
-    Logger.prototype.output = function(message) {
-        console.log(this.name + ' - ' + message);
-    }
+    BookAppLogger.prototype = Object.create(LoggerBase.prototype);
 
 }());
