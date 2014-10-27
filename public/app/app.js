@@ -2,7 +2,7 @@
 
     var app = angular.module('app', []);
 
-    app.provider('books', function (constants) {
+    app.provider('books', ['constants', function (constants) {
 
         var includeVersionInTitle = false;
         this.setIncludeVersionInTitle = function (value) {
@@ -26,9 +26,9 @@
             };
         }
 
-    });
+    }]);
 
-    app.config(function (booksProvider, constants, dataServiceProvider) {
+    app.config(['booksProvider', 'constants', 'dataServiceProvider', function (booksProvider, constants, dataServiceProvider) {
 
         booksProvider.setIncludeVersionInTitle(true);
 
@@ -36,6 +36,6 @@
 
         console.log(dataServiceProvider.$get);
 
-    });
+    }]);
 
 }());
