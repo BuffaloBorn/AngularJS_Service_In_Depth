@@ -24,7 +24,7 @@
                 appName: appName,
                 appDesc: appDesc
             };
-        }
+        };
 
     }]);
 
