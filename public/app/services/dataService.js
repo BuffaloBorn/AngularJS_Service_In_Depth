@@ -23,13 +23,13 @@
                     yearPublished: 2000
                 },
                 {
-                    book_id: 1,
+                    book_id: 2,
                     title: 'The Cat in the Hat',
                     author: 'Dr. Seuss',
                     yearPublished: 1957
                 },
                 {
-                    book_id: 1,
+                    book_id: 3,
                     title: 'Encyclopedia Brown, Boy Detective',
                     author: 'Donald J. Sobol',
                     yearPublished: 1963
