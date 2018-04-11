@@ -1,3 +1,9 @@
+<div>
+    {{ books.summaryData.bookCount }} Books -
+    {{ books.summaryData.readerCount }} Readers -
+    {{ books.summaryData.grandTotalMinutes }} Total Minutes Read
+</div>
+
 <h3>All Books</h3>
 <div>
     <ul>
@@ -9,7 +15,7 @@
 </div>
 
 <a href="#/AddBook">Add New Book</a>
-<a href="#/EditBook/{{ books.lastEdited.book_id }}">Open Last Edited</a>
+<a href="#/EditBook/{{ books.currentUser.lastBookEdited.book_id }}">Open Last Edited</a>
 
 <h3>All Readers</h3>
 <div>

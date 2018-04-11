@@ -1,14 +1,23 @@
 (function() {
 
     angular.module('app')
-        .controller('BooksController', ['$q', 'books', 'dataService', 'badgeService', '$cookies', '$cookieStore', '$log', '$route', BooksController]);
+        .controller('BooksController', ['$q', 'books', 'dataService', 'badgeService', '$cookies', '$cookieStore', '$log', '$route', 'currentUser', BooksController]);
 
 
-    function BooksController($q, books, dataService, badgeService, $cookies, $cookieStore, $log, $route) {
+    function BooksController($q, books, dataService, badgeService, $cookies, $cookieStore, $log, $route, currentUser) {
 
         var vm = this;
 
         vm.appName = books.appName;
+
+        dataService.getUserSummary()
+            .then(getUserSummarySuccess);
+
+        function getUserSummarySuccess(summaryData) {
+            console.log(summaryData);
+            vm.summaryData = summaryData;
+        }
+
 
         dataService.getAllBooks()
             .then(getBooksSuccess, null, getBooksNotification)
@@ -49,7 +58,7 @@
 
         vm.favoriteBook = $cookies.favoriteBook;
 
-        vm.lastEdited = $cookieStore.get('lastEdited');
+        vm.currentUser = currentUser;
 
         vm.deleteBook = function (bookID) {
 
