@@ -4,7 +4,7 @@
         .factory('dataService', dataService);
 
 
-    function dataService(logger) {
+    function dataService() {
 
         return {
             getAllBooks: getAllBooks,
@@ -12,8 +12,6 @@
         };
 
         function getAllBooks() {
-
-            logger.output('getting all books');
 
             return [
                 {
@@ -39,8 +37,6 @@
 
         function getAllReaders() {
 
-            logger.output('getting all readers');
-
             return [
                 {
                     reader_id: 1,
@@ -63,7 +59,5 @@
             ];
         }
     }
-
-    dataService.$inject = ['logger'];
 
 }());

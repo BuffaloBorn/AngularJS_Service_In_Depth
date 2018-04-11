@@ -28,13 +28,9 @@
 
     }]);
 
-    app.config(['booksProvider', 'constants', 'dataServiceProvider', function (booksProvider, constants, dataServiceProvider) {
+    app.config(['booksProvider', function (booksProvider) {
 
         booksProvider.setIncludeVersionInTitle(true);
-
-        console.log('title from constants service: ' + constants.APP_TITLE);
-
-        console.log(dataServiceProvider.$get);
 
     }]);
 
