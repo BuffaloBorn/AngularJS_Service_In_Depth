@@ -51,7 +51,7 @@
         }
 
         function getAllReadersComplete() {
-            //console.log('getAllReaders has completed');
+            $log.awesome('All readers retrieved');
         }
 
         vm.getBadge = badgeService.retrieveBadge;
