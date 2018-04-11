@@ -43,10 +43,6 @@
             vm.allBooks = books;
         }
 
-        //function getBooksError(reason) {
-        //    console.log(reason);
-        //}
-
         function getBooksNotification(notification) {
             //console.log('Promise Notification: ' + notification);
         }
@@ -58,8 +54,6 @@
         function getAllBooksComplete() {
             //console.log('getAllBooks has completed');
         }
-
-        //vm.allReaders = dataService.getAllReaders();
 
         dataService.getAllReaders()
             .then(getReadersSuccess)
@@ -79,13 +73,6 @@
         vm.favoriteBook = $cookies.favoriteBook;
 
         vm.lastEdited = $cookieStore.get('lastEdited');
-
-        $log.log('logging with log');
-        $log.info('logging with info');
-        $log.warn('logging with warn');
-        $log.error('logging with error');
-        $log.debug('logging with debug');
-
 
     }
 

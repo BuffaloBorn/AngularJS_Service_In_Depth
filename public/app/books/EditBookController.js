@@ -4,16 +4,8 @@
         .controller('EditBookController', ['$routeParams', 'books', '$cookies', '$cookieStore', EditBookController]);
 
     function EditBookController($routeParams, books, $cookies, $cookieStore) {
-        //console.log($routeParams.bookID);
 
         var vm = this;
-
-        //dataService.getAllBooks()
-        //    .then(function(books) {
-        //        vm.currentBook = books.filter(function(item) {
-        //            return item.book_id == $routeParams.bookID;
-        //        })[0];
-        //    });
 
         vm.currentBook = books.filter(function(item) {
             return item.book_id == $routeParams.bookID;
