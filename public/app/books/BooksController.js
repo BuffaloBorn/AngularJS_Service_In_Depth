@@ -14,7 +14,7 @@
             .then(getUserSummarySuccess);
 
         function getUserSummarySuccess(summaryData) {
-            console.log(summaryData);
+            //$log.log(summaryData);
             vm.summaryData = summaryData;
         }
 

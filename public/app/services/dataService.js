@@ -30,12 +30,12 @@
 
             if (summaryFromCache) {
 
-                console.log('returning summary from cache');
+                //console.log('returning summary from cache');
                 deferred.resolve(summaryFromCache);
 
             } else {
 
-                console.log('gathering new summary data');
+                //console.log('gathering new summary data');
 
                 var booksPromise = getAllBooks();
                 var readersPromise = getAllReaders();
